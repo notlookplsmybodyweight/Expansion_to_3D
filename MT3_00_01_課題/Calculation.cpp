@@ -19,3 +19,26 @@ Calculation::Calculation() {
 
 
 }
+void Calculation::VectorScreenPrintf(int x, int y, const Vector3& vector, const char* label) {
+	Novice::ScreenPrintf(x,y,"%.02f",vector.x);
+	Novice::ScreenPrintf(x+kColumWidth,y,"%.02f",vector.y);
+	Novice::ScreenPrintf(x+kColumWidth*2,y,"%.02f",vector.z);
+	Novice::ScreenPrintf(x+kColumWidth*3,y,"%s",label);
+
+
+}
+Vector3 Calculation::Add(const Vector3& v1, const Vector3& v2) {
+	return { v1.x + v2.x,v1.y + v2.y,v1.z + v2.z
+		
+	};
+}
+
+Vector3 Calculation::Subtract(const Vector3& v1, const Vector3& v2)
+{
+	return { v1.x - v2.x,v1.y - v2.y,v1.z - v2.z
+	
+	};
+}
+Vector3 Calculation::Multiply(float Scaler,const Vector3& v) {
+	return{ Scaler * v.x,Scaler * v.y,Scaler * v.z };
+}
