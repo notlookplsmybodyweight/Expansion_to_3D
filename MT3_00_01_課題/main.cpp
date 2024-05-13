@@ -1,5 +1,5 @@
 #include <Novice.h>
-
+#include "Calculation.h"
 const char kWindowTitle[] = "GC1D_ワタナベ＿リョウイチ";
 
 // Windowsアプリでのエントリーポイント(main関数)
@@ -11,7 +11,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	// キー入力結果を受け取る箱
 	char keys[256] = { 0 };
 	char preKeys[256] = { 0 };
-
+	
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
 		// フレームの開始
@@ -32,9 +32,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓描画処理ここから
 		///
-		Novice::ScreenPrintf(0, 0, "Heroworld変更");
-		Novice::ScreenPrintf(0, 0, "日付10月11日");
-		Novice::DrawBox(0, 0, 0, 0, 0.0f,  BLUE, kFillModeSolid);
+
 		///
 		/// ↑描画処理ここまで
 		///
