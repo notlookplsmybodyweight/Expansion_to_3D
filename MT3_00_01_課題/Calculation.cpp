@@ -3,8 +3,7 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-static const int kColumWidth = 60;
-static const int kRowHeight = 20;
+
 
 Calculation::Calculation() {
 	v1_ = { 1.0f,3.0f,-5.0f };

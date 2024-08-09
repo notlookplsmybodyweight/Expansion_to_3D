@@ -1,6 +1,8 @@
 
 #pragma once
 #include <Vector3.h>
+static const int kColumWidth = 60;
+static const int kRowHeight = 20;
 class Calculation
 {
 
@@ -63,7 +65,16 @@ public://関数
 	/// <returns></returns>
 	Vector3 Normalize(const Vector3& v);
 
-
+	Vector3 V1_() { return v1_; };
+	Vector3 V2_() { return v2_; };
+	float K_() { return k_; };
+	//Vector3 Normalize(const Vector3& v);
+	Vector3 resultAdd() { return resultAdd_; };
+	Vector3 resultSubtract() { return resultSubtract_; };
+	Vector3 resultMultiply() { return resultMultiply_; };
+	float resultDot() { return resultDot_; };
+	float resultLength() { return resultLength_; };
+	Vector3 resultNormalize() { return resultNormalize_; };
 private://メンバー変数
 	Vector3 v1_;
 	Vector3 v2_;

@@ -11,7 +11,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	// キー入力結果を受け取る箱
 	char keys[256] = { 0 };
 	char preKeys[256] = { 0 };
-	
+	Calculation* calc = new Calculation;
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
 		// フレームの開始
@@ -32,7 +32,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓描画処理ここから
 		///
-
+		calc->VectorScreenPrintf(0, 0, calc->resultAdd(), ":Add\n");
+		calc->VectorScreenPrintf(0, kColumWidth, calc->resultSubtract(), ":Subtract\n");
+		calc->VectorScreenPrintf(0, kColumWidth * 2, calc->resultMultiply(), ":Multiply\n");
+		Novice::ScreenPrintf(0, kColumWidth * 3, "%f:Dot", calc->resultDot());
+		Novice::ScreenPrintf(0, kColumWidth * 4, "%f:Lenght", calc->resultLength());
+		calc->VectorScreenPrintf(0, kColumWidth * 5, calc->resultNormalize(), ":Normalize");
 		///
 		/// ↑描画処理ここまで
 		///
